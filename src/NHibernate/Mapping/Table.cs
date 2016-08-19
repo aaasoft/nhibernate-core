@@ -757,7 +757,23 @@ namespace NHibernate.Mapping
 			IEnumerable<Column> kCols = keyColumns;
 			IEnumerable<Column> refCols = referencedColumns;
 
-			var key = new ForeignKeyKey(kCols, referencedEntityName, refCols);
+            if (refCols == null)
+            {
+                var tmpList = new List<Column>();
+                foreach (var kCol in kCols)
+                {
+                    if (String.IsNullOrEmpty(kCol.ForeignColumn))
+                    {
+                        tmpList = null;
+                        break;
+                    }
+                    var refCol = new Column(kCol.ForeignColumn);
+                    tmpList.Add(refCol);
+                }
+                refCols = tmpList;
+            }
+
+            var key = new ForeignKeyKey(kCols, referencedEntityName, refCols);
 
 			ForeignKey fk;
 			foreignKeys.TryGetValue(key, out fk);
@@ -778,7 +794,7 @@ namespace NHibernate.Mapping
 				foreignKeys.Add(key, fk);
 				fk.ReferencedEntityName = referencedEntityName;
 				fk.AddColumns(kCols);
-				if (referencedColumns != null)
+				if (refCols != null)
 				{
 					fk.AddReferencedColumns(refCols);
 				}

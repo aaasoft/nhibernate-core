@@ -32,11 +32,12 @@ namespace NHibernate.Mapping
 		private string checkConstraint;
 		private string comment;
 		private string defaultValue;
+        private string foreignColumn;
 
-		/// <summary>
-		/// Initializes a new instance of <see cref="Column"/>.
-		/// </summary>
-		public Column()
+        /// <summary>
+        /// Initializes a new instance of <see cref="Column"/>.
+        /// </summary>
+        public Column()
 		{
 		}
 
@@ -377,7 +378,13 @@ namespace NHibernate.Mapping
 			set { defaultValue = value; }
 		}
 
-		public string GetTemplate(Dialect.Dialect dialect, SQLFunctionRegistry functionRegistry)
+        public string ForeignColumn
+        {
+            get { return foreignColumn; }
+            set { foreignColumn = value; }
+        }
+
+        public string GetTemplate(Dialect.Dialect dialect, SQLFunctionRegistry functionRegistry)
 		{
 			return GetQuotedName(dialect);
 		}

@@ -67,6 +67,7 @@ namespace NHibernate.Cfg.XmlHbmBinding
 			column.CheckConstraint = columnMapping.check ?? string.Empty;
 			column.SqlType = columnMapping.sqltype;
 			column.DefaultValue = columnMapping.@default;
+            column.ForeignColumn = columnMapping.foreigncolumn;
 			if (columnMapping.comment != null)
 				column.Comment = columnMapping.comment.Text.LinesToString().Trim();
 		}

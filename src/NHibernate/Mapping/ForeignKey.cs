@@ -158,17 +158,17 @@ namespace NHibernate.Mapping
 				referencedColumns.Add(column);
 		}
 
-		internal void AddReferencedTable(PersistentClass referencedClass)
-		{
-			if (referencedColumns.Count > 0)
-			{
-				referencedTable = referencedColumns[0].Value.Table;
-			}
-			else
-			{
-				referencedTable = referencedClass.Table;
-			}
-		}
+        internal void AddReferencedTable(PersistentClass referencedClass)
+        {
+            if (referencedColumns.Count > 0 && referencedColumns[0].Value != null)
+            {
+                referencedTable = referencedColumns[0].Value.Table;
+            }
+            else
+            {
+                referencedTable = referencedClass.Table;
+            }
+        }
 
 		public override string ToString()
 		{

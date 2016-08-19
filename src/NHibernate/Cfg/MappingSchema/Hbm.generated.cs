@@ -126,70 +126,75 @@ namespace NHibernate.Cfg.MappingSchema {
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string @class;
     }
-    
+
     /// <remarks/>
     [System.CodeDom.Compiler.GeneratedCodeAttribute("HbmXsd", "3.2.0.1001")]
     [System.SerializableAttribute()]
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType=true, Namespace="urn:nhibernate-mapping-2.2")]
-    [System.Xml.Serialization.XmlRootAttribute("column", Namespace="urn:nhibernate-mapping-2.2", IsNullable=false)]
-    public partial class HbmColumn {
-        
+    [System.Xml.Serialization.XmlTypeAttribute(AnonymousType = true, Namespace = "urn:nhibernate-mapping-2.2")]
+    [System.Xml.Serialization.XmlRootAttribute("column", Namespace = "urn:nhibernate-mapping-2.2", IsNullable = false)]
+    public partial class HbmColumn
+    {
+
         /// <remarks/>
         public HbmComment comment;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string name;
-        
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string length;
-        
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="positiveInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "positiveInteger")]
         public string precision;
-        
+
         /// <remarks/>
-        [System.Xml.Serialization.XmlAttributeAttribute(DataType="nonNegativeInteger")]
+        [System.Xml.Serialization.XmlAttributeAttribute(DataType = "nonNegativeInteger")]
         public string scale;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute("not-null")]
         public bool notnull;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool notnullSpecified;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public bool unique;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlIgnoreAttribute()]
         public bool uniqueSpecified;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute("unique-key")]
         public string uniquekey;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute("sql-type")]
         public string sqltype;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string index;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string check;
-        
+
         /// <remarks/>
         [System.Xml.Serialization.XmlAttributeAttribute()]
         public string @default;
+
+        /// <remarks/>
+        [System.Xml.Serialization.XmlAttributeAttribute("foreign-column")]
+        public string foreigncolumn;
     }
     
     /// <remarks/>
